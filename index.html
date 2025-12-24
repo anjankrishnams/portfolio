@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anjana Krishna MS | B.Tech CSE Portfolio</title>
+    
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Lucide Icons from CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Google Font: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- All CSS is embedded here -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Slate 900 */
+            color: #cbd5e1; /* Slate 300 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Gradient text for headings */
+        .gradient-text {
+            background: linear-gradient(to right, #6366f1, #38bdf8); /* Indigo 500 to Sky 500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Card styling */
+        .card {
+            background-color: #1e293b; /* Slate 800 */
+            border: 1px solid #334155; /* Slate 700 */
+            border-radius: 0.75rem; /* 12px */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-color: #4f46e5; /* Indigo 600 */
+        }
+
+        /* Sticky Header Background */
+        .header-bg {
+            background-color: rgba(15, 23, 42, 0.85); /* Slate 900 with 85% opacity */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid #334155; /* Slate 700 */
+        }
+
+        /* Mobile menu container transitions */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, opacity 0.3s ease-out;
+            opacity: 0;
+        }
+        
+        .mobile-menu.open {
+            max-height: 500px; /* Ample height for menu items */
+            opacity: 1;
+        }
+
+        /* Custom underline for nav links */
+        .nav-link {
+            position: relative;
+            padding-bottom: 4px;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6366f1; /* Indigo 500 */
+            transition: width 0.3s ease-out;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 header-bg">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo/Name -->
+                <a href="#home" class="text-2xl font-extrabold gradient-text">ANJANA KRISHNA MS</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#about" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">About</a>
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">Skills</a>
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">Projects</a>
+                    <a href="#education" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">Education</a>
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">Contact</a>
+                    <a href="https://www.linkedin.com/in/anjana-krishna-m-s/" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">linkedin</a>
+                    <a href="https://github.com/anjankrishnams" class="nav-link text-gray-300 hover:text-white font-medium transition-colors duration-300">github</a>
+
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="mobile-menu md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">About</a>
+                <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Skills</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Projects</a>
+                <a href="#education" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Education</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-slate-700 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Wrapper -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero / About Section -->
+        <section id="home" class="min-h-screen flex items-center pt-20 pb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="inline-block px-4 py-1 text-sm font-medium text-indigo-300 bg-indigo-900/50 rounded-full">B.Tech Computer Science Student</span>
+                    <h1 class="text-5xl lg:text-7xl font-extrabold text-white leading-tight">
+                        Hi, I'm <span class="gradient-text">Anjana Krishna MS</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-xl">
+                        Motivated Computer Science student from Thejus Engineering College with hands-on experience in full-stack Python Django development. Passionate about building user-friendly digital solutions and contributing to innovative IT projects.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <!-- IMPORTANT: Replace '#' with the link to your uploaded resume PDF -->
+                        <a href="Anjana krishna Resume.pdf" target="_blank" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-indigo-600 rounded-lg shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
+                            <i data-lucide="download" class="w-5 h-5 mr-2"></i>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-slate-700 rounded-lg shadow-lg hover:bg-slate-600 transition-colors duration-300 transform hover:scale-105">
+                            <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:flex justify-center items-center">
+                    <!-- Placeholder graphic -->
+                    <div class="w-80 h-80 lg:w-96 lg:h-96 bg-slate-800 rounded-full flex items-center justify-center border-4 border-indigo-500 shadow-2xl shadow-indigo-500/30">
+                        <i data-lucide="code-xml" class="w-40 h-40 text-indigo-400"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-4">My Technical <span class="gradient-text">Skills</span></h2>
+            <p class="text-lg text-slate-400 text-center mb-16 max-w-2xl mx-auto">Here are the technologies I've worked with during my studies and internships.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="python" class="w-12 h-12 text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">Python</h3>
+                    <p class="text-slate-400">Core &amp; Scripting</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="layers" class="w-12 h-12 text-blue-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">Django</h3>
+                    <p class="text-slate-400">Full-Stack Developer</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="code" class="w-12 h-12 text-orange-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">HTML5</h3>
+                    <p class="text-slate-400">Web Structure</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="paint-brush" class="w-12 h-12 text-sky-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">CSS3</h3>
+                    <p class="text-slate-400">Styling &amp; Design</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="braces" class="w-12 h-12 text-yellow-300 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">JavaScript</h3>
+                    <p class="text-slate-400">Interactivity</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="hard-drive" class="w-12 h-12 text-gray-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">C</h3>
+                    <p class="text-slate-400">Programming</p>
+                </div>
+                <!-- Skill Card -->
+                <div class="card p-6 flex flex-col items-center text-center">
+                    <i data-lucide="layout-template" class="w-12 h-12 text-red-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white">Web Development</h3>
+                    <p class="text-slate-400">General</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-16">Internship <span class="gradient-text">Experience</span></h2>
+            <div class="relative max-w-3xl mx-auto pl-8">
+                <!-- Vertical Line -->
+                <div class="absolute left-0 top-0 h-full w-1 bg-slate-700 rounded-full"></div>
+                
+                <!-- Experience Item 1 -->
+                <div class="mb-12 relative">
+                    <div class="absolute -left-11 top-1.5 w-6 h-6 bg-indigo-500 rounded-full border-4 border-slate-900"></div>
+                    <div class="card p-6">
+                        <span class="text-sm font-medium text-indigo-300">July 2025 - Oct 2025</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">Python Django Full-Stack Internship</h3>
+                        <p class="text-lg font-semibold text-slate-300 mt-1">Ziuke InfoTech</p>
+                        <p class="text-slate-400 mt-3">
+                            Gained comprehensive knowledge in end-to-end web development. Successfully developed a fully functional, user-centric website as part of the internship, applying Python and Django skills in a professional environment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Experience Item 2 -->
+                <div class="relative">
+                    <div class="absolute -left-11 top-1.5 w-6 h-6 bg-indigo-500 rounded-full border-4 border-slate-900"></div>
+                    <div class="card p-6">
+                        <span class="text-sm font-medium text-indigo-300">Sep 2024 - Nov 2024</span>
+                        <h3 class="text-2xl font-bold text-white mt-1">Python Development Internship</h3>
+                        <p class="text-lg font-semibold text-slate-300 mt-1">GRAPESGENIX TECHNICAL SOLUTIONS</p>
+                        <p class="text-slate-400 mt-3">
+                            Acquired in-depth theoretical knowledge and practical experience in Python programming and core development concepts, applying skills in a technical setting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-24">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-16">My <span class="gradient-text">Projects</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="card p-8 flex flex-col" >
+                    <h3 class="text-2xl font-bold text-white">Online Student Attendance System</h3>
+                    <a href="https://github.com/Arjunkothanath/ONLINE-STUDENT-ATTENDANCE-SYSTEM" class="text-indigo-300 hover:underline">View on GitHub</a>
+                    <span class="text-sm font-medium text-indigo-300 mt-1">Thejus Engineering College | Apr 2025</span>
+                    <p class="text-slate-400 mt-4 flex-grow">
+                        Developed a secure attendance tracking system for students and faculty. Automated report generation and reduced manual recordkeeping errors.
+                    </p>
+                    <div class="mt-4">
+                        <span class="text-sm text-white font-medium mr-2">Tech Used:</span>
+                        <span class="inline-block bg-blue-900/50 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">python</span>
+                        <span class="inline-block bg-yellow-900/50 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">html</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">css</span>
+                         <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">Django</span>
+                          <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">javascript</span>
+                           <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">mysql</span>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="card p-8 flex flex-col">
+                    <h3 class="text-2xl font-bold text-white">Pet Adoption Center Website</h3>
+                    <a href="https://github.com/anjankrishnams/pet-adoption-center" class="text-indigo-300 hover:underline">View on GitHub</a>
+                    <span class="text-sm font-medium text-indigo-300 mt-1">Ziuke InfoTech | Jun 2025</span>
+                    <p class="text-slate-400 mt-4 flex-grow">
+                        Developed a responsive web platform to facilitate cat adoption and efficiently manage adoption requests, enhancing user experience and streamlining processes.
+                    </p>
+                    <div class="mt-4">
+                        <span class="text-sm text-white font-medium mr-2">Tech Used:</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">python</span>
+                        <span class="inline-block bg-orange-900/50 text-orange-300 text-xs font-semibold px-3 py-1 rounded-full">HTML</span>
+                        <span class="inline-block bg-sky-900/50 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">CSS</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">Django</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">javascript</span>
+                        <span class="inline-block bg-gray-700 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">mysql</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Achievement Highlight -->
+            <div class="card p-8 mt-12 bg-gradient-to-r from-indigo-900/50 to-purple-900/50 border-indigo-600">
+                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                    <i data-lucide="award" class="w-16 h-16 text-yellow-400 flex-shrink-0"></i>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Achievement Spotlight</h3>
+                        <p class="text-lg text-slate-300 mt-1">
+                            <span class="font-semibold text-yellow-300">WINNER, HACKHARVEST 25</span> - Thejus Engineering College (Feb 2025)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-24">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-16"><span class="gradient-text">Education</span></h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Education Card 1 -->
+                <div class="card p-6">
+                    <span class="text-sm font-medium text-slate-400">2022 - 2026</span>
+                    <h3 class="text-2xl font-bold text-white mt-1">B.Tech Computer Science</h3>
+                    <p class="text-lg font-semibold text-indigo-300 mt-1">Thejus Engineering College, Vellarkkad</p>
+                    <p class="text-slate-400 mt-1">Affiliated to KTU University | Final Year</p>
+                      <p class="text-slate-400 mt-1">cgpa:7.28</p>
+                </div>
+                
+                <!-- Education Card 2 -->
+                <div class="card p-6">
+                    <span class="text-sm font-medium text-slate-400">2020 - 2022</span>
+                    <h3 class="text-2xl font-bold text-white mt-1">Higher Secondary (+2 Biology)</h3>
+                    <p class="text-lg font-semibold text-indigo-300 mt-1">St. Aloysius HSS, Elthuruth</p>
+                    <p class="text-slate-400 mt-1">Graduated with 92%</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24">
+            <h2 class="text-4xl font-extrabold text-center text-white mb-4">Get In <span class="gradient-text">Touch</span></h2>
+            <p class="text-lg text-slate-400 text-center mb-16 max-w-2xl mx-auto">I'm open to new opportunities and collaborations. Feel free to reach out!</p>
+            
+            <div class="card max-w-3xl mx-auto p-8">
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <!-- Contact Info -->
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="mail" class="w-8 h-8 text-indigo-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Email</h4>
+                                <a href="mailto:anjankrishnams@gmail.com" class="text-slate-300 hover:text-indigo-300 transition-colors">anjankrishnams@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-8 h-8 text-indigo-400 flex-shrink-0"></i>
+                            <div>
+                                <h4 class="text-lg font-semibold text-white">Phone</h4>
+                                <a href="tel:+91 8281132688" class="text-slate-300 hover:text-indigo-300 transition-colors">+91 8281132688</a>
